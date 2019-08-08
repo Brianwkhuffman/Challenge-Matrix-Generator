@@ -7,10 +7,14 @@ function matrixGenerator(rows, columns) {
       let random = Math.floor(Math.random() * 101)
       matrix[i].push(random)
     }
-    matrix[i].sort()
+    matrix[i].sort(function (a, b) {
+      return a - b;
+    })
   }
 
-  return matrix.sort();
+  return matrix.sort(function (a, b) {
+    return a[0] - b[0];
+  });
 }
 
 module.exports = matrixGenerator;
